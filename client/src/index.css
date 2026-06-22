@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+
+  --color-primary: #00E5FF;
+  --color-secondary: #7B2EFF;
+  --color-darkbg: #0D1117;
+  --color-accent: #FF3B3B;
+  --color-neon-yellow: #FFEB3B;
+  --color-neon-green: #39FF14;
+}
+
+/* Custom premium gaming typography & backgrounds */
+h1, h2, h3, .font-orbitron {
+  font-family: var(--font-display);
+}
+
+/* Glassmorphism theme classes */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-accent {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.1) 0%, rgba(123, 46, 255, 0.05) 100%);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+/* Cyberpunk grid background */
+.grid-bg {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-darkbg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Neon glow animations */
+@keyframes neon-glow-cyan {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3), 0 0 20px rgba(0, 229, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.6), 0 0 35px rgba(0, 229, 255, 0.3);
+  }
+}
+
+.glow-cyan {
+  animation: neon-glow-cyan 2.5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s infinite ease-in-out;
+}

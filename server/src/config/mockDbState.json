@@ -1,0 +1,189 @@
+{
+  "mockUsers": [
+    {
+      "_id": "mock-user-1",
+      "name": "Memory Legend",
+      "email": "tester@simonx.com",
+      "password": "$2a$10$BPFZRZXzTFfB86L2gtuIY.JLRg1isxLNO8zHwPZV6LO30n7vjNY0O",
+      "avatar": "https://api.dicebear.com/7.x/pixel-art/svg?seed=Felix",
+      "role": "user",
+      "highestScore": 25,
+      "gamesPlayed": 5,
+      "wins": 1,
+      "levelReached": 10,
+      "achievements": [
+        "Beginner",
+        "Perfect Accuracy"
+      ],
+      "isVerified": true,
+      "createdAt": "2026-06-20T19:52:22.474Z"
+    },
+    {
+      "_id": "mock-admin-1",
+      "name": "Game Director",
+      "email": "admin@simonx.com",
+      "password": "$2a$10$BPFZRZXzTFfB86L2gtuIY.JLRg1isxLNO8zHwPZV6LO30n7vjNY0O",
+      "avatar": "https://api.dicebear.com/7.x/pixel-art/svg?seed=Aria",
+      "role": "admin",
+      "highestScore": 50,
+      "gamesPlayed": 12,
+      "wins": 4,
+      "levelReached": 22,
+      "achievements": [
+        "Beginner",
+        "Memory Master",
+        "Level 50"
+      ],
+      "isVerified": true,
+      "createdAt": "2026-06-20T19:52:22.474Z"
+    },
+    {
+      "_id": "mock-user-1781985248568",
+      "name": "Verifier",
+      "email": "verify@simonx.com",
+      "password": "$2a$10$gR1b0tf.92eTlcu2oSk1V.3W2tVyGXHJJSVRSgdOp/bES79wK833O",
+      "avatar": "",
+      "role": "user",
+      "highestScore": 0,
+      "gamesPlayed": 0,
+      "wins": 0,
+      "levelReached": 0,
+      "achievements": [],
+      "isVerified": true,
+      "securityQuestion": "What was the name of your first pet?",
+      "securityAnswer": "$2a$10$gR1b0tf.92eTlcu2oSk1V.wj54l7BYVkcFSBtzzw9beQfGRMzUkfS",
+      "createdAt": "2026-06-20T19:54:08.568Z"
+    },
+    {
+      "_id": "mock-user-1781985613527",
+      "name": "simontester",
+      "email": "simontester@simonx.com",
+      "password": "$2a$10$jXNNC7o8dCfycFCE1fzPBOVx6IUv6lSyS9N4qbwkC/NaAlh.Ja2HG",
+      "avatar": "",
+      "role": "user",
+      "highestScore": 10,
+      "gamesPlayed": 1,
+      "wins": 0,
+      "levelReached": 2,
+      "achievements": [
+        "Beginner"
+      ],
+      "isVerified": true,
+      "securityQuestion": "What was the name of your first pet?",
+      "securityAnswer": "$2a$10$2qaNl5W883rFEEKlLxK8HuzvU3OW93BjmvCknXee5CUXtgshDa2L6",
+      "createdAt": "2026-06-20T20:00:13.527Z"
+    },
+    {
+      "_id": "mock-user-1781988548802",
+      "name": "Sheray",
+      "email": "sherayvatsya@gmail.com",
+      "password": "$2a$10$T7JKWb0SQB8842nsqQH2kOvzWzpXpGQnKcbfKiGhrOnB8lpBJUaI.",
+      "avatar": "",
+      "role": "user",
+      "highestScore": 260,
+      "gamesPlayed": 4,
+      "wins": 0,
+      "levelReached": 7,
+      "achievements": [
+        "Beginner",
+        "Memory Master"
+      ],
+      "isVerified": true,
+      "securityQuestion": "What city were you born in?",
+      "securityAnswer": "$2a$10$SZZ8UFJBz/RPQXpomsv2MOZvUKuyKXhcIlVu8hFOHfP5/edtwdb4u",
+      "createdAt": "2026-06-20T20:49:08.803Z"
+    }
+  ],
+  "mockGameHistory": [
+    {
+      "_id": "mock-hist-1781985999727",
+      "userId": "mock-user-1781985613527",
+      "mode": "classic",
+      "difficulty": "medium",
+      "score": 10,
+      "accuracy": 33,
+      "duration": 20,
+      "levelReached": 2,
+      "date": "2026-06-20T20:06:39.727Z"
+    },
+    {
+      "_id": "mock-hist-1782028175456",
+      "userId": "mock-user-1781988548802",
+      "mode": "classic",
+      "difficulty": "hard",
+      "score": 30,
+      "accuracy": 80,
+      "duration": 19,
+      "levelReached": 3,
+      "date": "2026-06-21T07:49:35.456Z"
+    },
+    {
+      "_id": "mock-hist-1782032844454",
+      "userId": "mock-user-1781988548802",
+      "mode": "classic",
+      "difficulty": "medium",
+      "score": 30,
+      "accuracy": 67,
+      "duration": 19,
+      "levelReached": 3,
+      "date": "2026-06-21T09:07:24.454Z"
+    },
+    {
+      "_id": "mock-hist-1782073400195",
+      "userId": "mock-user-1781988548802",
+      "mode": "classic",
+      "difficulty": "medium",
+      "score": 30,
+      "accuracy": 67,
+      "duration": 24,
+      "levelReached": 3,
+      "date": "2026-06-21T20:23:20.195Z"
+    },
+    {
+      "_id": "mock-hist-1782073480388",
+      "userId": "mock-user-1781988548802",
+      "mode": "classic",
+      "difficulty": "medium",
+      "score": 260,
+      "accuracy": 93,
+      "duration": 64,
+      "levelReached": 7,
+      "date": "2026-06-21T20:24:40.388Z"
+    }
+  ],
+  "mockLeaderboards": [
+    {
+      "userId": "mock-admin-1",
+      "username": "Game Director",
+      "avatar": "https://api.dicebear.com/7.x/pixel-art/svg?seed=Aria",
+      "highestScore": 50,
+      "dailyScore": 30,
+      "weeklyScore": 42
+    },
+    {
+      "userId": "mock-user-1",
+      "username": "Memory Legend",
+      "avatar": "https://api.dicebear.com/7.x/pixel-art/svg?seed=Felix",
+      "highestScore": 25,
+      "dailyScore": 10,
+      "weeklyScore": 18
+    },
+    {
+      "userId": "mock-user-1781985613527",
+      "username": "simontester",
+      "avatar": "",
+      "highestScore": 10,
+      "dailyScore": 4,
+      "weeklyScore": 8
+    },
+    {
+      "userId": "mock-user-1781988548802",
+      "username": "Sheray",
+      "avatar": "",
+      "highestScore": 260,
+      "dailyScore": 110,
+      "weeklyScore": 195
+    }
+  ],
+  "mockMatches": []
+}

@@ -32,14 +32,14 @@ function levelup (){
 function gameFlash (btn) {
     btn.classList.add("flash")
     setTimeout(function (){
-        btn.classList.remove("flash")}, 1000
+        btn.classList.remove("flash")}, 300
     )
 }
 
 function userFlash (btn) {
     btn.classList.add("userflash")
     setTimeout(function (){
-        btn.classList.remove("userflash")}, 300
+        btn.classList.remove("userflash")}, 150
     )
 }
 
@@ -61,15 +61,66 @@ function checkAns (idx){
 }
 }
 
-function btnPress () {
+function createSparkles(x, y, colorId) {
+    const colorMap = {
+        red: '#ff4b5c',
+        yellow: '#ffd200',
+        blue: '#00b4ff',
+        purple: '#b61aff'
+    };
+    const sparkleColor = colorMap[colorId] || '#ffffff';
+
+    const count = 12;
+    for (let i = 0; i < count; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'sparkle-particle';
+        
+        const size = Math.random() * 8 + 6;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.backgroundColor = sparkleColor;
+        particle.style.boxShadow = `0 0 8px ${sparkleColor}, 0 0 16px ${sparkleColor}`;
+        
+        particle.style.left = `${x}px`;
+        particle.style.top = `${y}px`;
+        particle.style.opacity = '1';
+        
+        document.body.appendChild(particle);
+
+        const angle = (i * (360 / count)) + (Math.random() * 20 - 10);
+        const distance = Math.random() * 50 + 40;
+        const dx = Math.cos((angle * Math.PI) / 180) * distance;
+        const dy = Math.sin((angle * Math.PI) / 180) * distance;
+
+        // Force a layout/render pass and animate
+        setTimeout(() => {
+            particle.style.transform = `translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(0.1)`;
+            particle.style.opacity = '0';
+        }, 10);
+
+        setTimeout(() => {
+            particle.remove();
+        }, 600);
+    }
+}
+
+function btnPress (e) {
     let btn = this;
+    
+    if (started) {
+        if (e && e.clientX && e.clientY) {
+            createSparkles(e.clientX, e.clientY, btn.id);
+        } else {
+            let rect = btn.getBoundingClientRect();
+            createSparkles(rect.left + rect.width / 2, rect.top + rect.height / 2, btn.id);
+        }
+    }
     
     userFlash(btn)
     userColor = btn.getAttribute("id");
     userSeq.push(userColor);
 
     checkAns(userSeq.length - 1);
-
 }
 
 let allBtns = document.querySelectorAll(".btn");

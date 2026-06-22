@@ -11,7 +11,9 @@ body {
     justify-content: center;
     align-items: center;
     display: flex;
-    
+    transition: transform 0.12s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.12s ease, box-shadow 0.12s ease;
+    cursor: pointer;
+    user-select: none;
 }
 
 .btn-container{
@@ -26,8 +28,6 @@ body {
     top: 6px;
     font-size: large;
     align-items: center;
-    
-
 }
 
 .red {
@@ -36,7 +36,6 @@ body {
 
 .blue {
     background-color: blue;
-
 }
 
 .purple {
@@ -45,9 +44,41 @@ body {
 
 .flash {
     background-color: white;
+    box-shadow: 0 0 45px white;
+    transform: scale(1.05);
 }
 
 .userflash {
-    background-color: green;
+    transform: scale(0.9);
 }
+
+.red.userflash {
+    background-color: #ff6b7b;
+    box-shadow: 0 0 35px #ff4b5c;
+}
+
+.yellow.userflash {
+    background-color: #ffea75;
+    box-shadow: 0 0 35px #ffd200;
+}
+
+.blue.userflash {
+    background-color: #5ad0ff;
+    box-shadow: 0 0 35px #00b4ff;
+}
+
+.purple.userflash {
+    background-color: #d670ff;
+    box-shadow: 0 0 35px #b61aff;
+}
+
+.sparkle-particle {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.55s cubic-bezier(0.1, 0.8, 0.25, 1), opacity 0.55s ease-out;
+}
+
 
