@@ -13,6 +13,8 @@ import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import { Login, Register, ForgotPassword, ResetPassword, VerifyEmailPage } from './pages/AuthPages';
 import InstructionsPage from './pages/InstructionsPage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
 
 // Protected Route wrappers
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -63,6 +65,8 @@ export default function App() {
             <Route path="/play" element={<GamePage />} />
             <Route path="/leaderboard" element={<LeaderboardPage />} />
             <Route path="/instructions" element={<InstructionsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             
             {/* Guest Only Routes */}
             <Route path="/login" element={<Login />} />

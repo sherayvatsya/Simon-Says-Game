@@ -269,8 +269,8 @@ export default function LandingPage() {
             SIMONX &copy; {new Date().getFullYear()} – ALL RIGHTS RESERVED
           </span>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
             <a href="mailto:sherayvatsya@gmail.com" className="hover:text-primary transition-colors">Contact: sherayvatsya@gmail.com</a>
           </div>
         </div>
