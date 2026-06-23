@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuthStore } from './store/useAuthStore';
 import Navbar from './components/Navbar';
@@ -56,7 +56,7 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <HashRouter>
       <div className="min-h-screen bg-[#0D1117] text-slate-100 flex flex-col selection:bg-primary selection:text-darkbg">
         <Navbar />
         <main className="flex-1 flex flex-col">
@@ -95,7 +95,7 @@ export default function App() {
           </Routes>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
     </QueryClientProvider>
   );
 }
