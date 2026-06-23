@@ -160,6 +160,23 @@
       "securityQuestion": "What city were you born in?",
       "securityAnswer": "$2a$10$Ov5WGuN5rdMPvrGPU0l2fea82XObpo0cfoSByb7lzXgeScAnidNF2",
       "createdAt": "2026-06-23T13:29:35.401Z"
+    },
+    {
+      "_id": "mock-user-1782241935079",
+      "name": "sheray",
+      "email": "nielit.ac@gmail.com",
+      "password": "$2a$10$3RIWkHnavwWz9eS1z0ULG.apLjas39XwoAHXDOoJfgq7ZX7u.2DYC",
+      "avatar": "",
+      "role": "user",
+      "highestScore": 0,
+      "gamesPlayed": 0,
+      "wins": 0,
+      "levelReached": 0,
+      "achievements": [],
+      "isVerified": true,
+      "securityQuestion": "What city were you born in?",
+      "securityAnswer": "$2a$10$3RIWkHnavwWz9eS1z0ULG.BYd7m20msFRqcEanm9kjZpVH2mKMHDi",
+      "createdAt": "2026-06-23T19:12:15.079Z"
     }
   ],
   "mockGameHistory": [
@@ -262,6 +279,14 @@
     },
     {
       "userId": "mock-user-1782221375401",
+      "username": "sheray",
+      "avatar": "",
+      "highestScore": 0,
+      "dailyScore": 0,
+      "weeklyScore": 0
+    },
+    {
+      "userId": "mock-user-1782241935079",
       "username": "sheray",
       "avatar": "",
       "highestScore": 0,
