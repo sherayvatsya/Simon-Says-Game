@@ -143,6 +143,23 @@
       "securityQuestion": "What was the name of your first pet?",
       "securityAnswer": "$2a$10$M1RekUoppfotH9YNiDcyq.Z5QOQS9p.qjQnljIHWcIaik2DAGRKOS",
       "createdAt": "2026-06-23T12:19:00.367Z"
+    },
+    {
+      "_id": "mock-user-1782221375401",
+      "name": "sheray",
+      "email": "sheray@gmail.com",
+      "password": "$2a$10$Ov5WGuN5rdMPvrGPU0l2fevl.dlEioP/7utow6Wi5Uumyb0RJ0HjK",
+      "avatar": "",
+      "role": "user",
+      "highestScore": 0,
+      "gamesPlayed": 0,
+      "wins": 0,
+      "levelReached": 0,
+      "achievements": [],
+      "isVerified": true,
+      "securityQuestion": "What city were you born in?",
+      "securityAnswer": "$2a$10$Ov5WGuN5rdMPvrGPU0l2fea82XObpo0cfoSByb7lzXgeScAnidNF2",
+      "createdAt": "2026-06-23T13:29:35.401Z"
     }
   ],
   "mockGameHistory": [
@@ -238,6 +255,14 @@
     {
       "userId": "mock-user-1782217140367",
       "username": "leaderboardtester",
+      "avatar": "",
+      "highestScore": 0,
+      "dailyScore": 0,
+      "weeklyScore": 0
+    },
+    {
+      "userId": "mock-user-1782221375401",
+      "username": "sheray",
       "avatar": "",
       "highestScore": 0,
       "dailyScore": 0,
