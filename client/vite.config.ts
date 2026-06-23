@@ -7,8 +7,8 @@ export default defineConfig({
   base: '/Simon-Says-Game/',
   plugins: [react(), tailwindcss()],
   build: {
-    outDir: '../',
-    emptyOutDir: false,
+    outDir: 'dist',
+    emptyOutDir: true,
   },
   server: {
     port: 5173,

@@ -1,9 +1,9 @@
 const CACHE_NAME = 'simonx-cache-v1';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/favicon.svg',
-  '/manifest.json',
+  './',
+  './index.html',
+  './favicon.svg',
+  './manifest.json',
 ];
 
 self.addEventListener('install', (e) => {
@@ -21,7 +21,7 @@ self.addEventListener('fetch', (e) => {
       return cachedResponse || fetch(e.request).catch(() => {
         // Fallback for document requests when offline
         if (e.request.mode === 'navigate') {
-          return caches.match('/index.html');
+          return caches.match('./index.html');
         }
       });
     })
