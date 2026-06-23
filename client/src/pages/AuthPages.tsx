@@ -152,6 +152,7 @@ export function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [selectedQuestion, setSelectedQuestion] = useState('What was the name of your first pet?');
   const [customQuestion, setCustomQuestion] = useState('');
   const [securityAnswer, setSecurityAnswer] = useState('');
@@ -213,6 +214,7 @@ export function Register() {
               <input 
                 type="text" 
                 required
+                minLength={2}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/5 focus:border-primary focus:outline-none transition-colors text-sm"
@@ -241,13 +243,22 @@ export function Register() {
             <div className="relative">
               <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-500"><Lock size={16} /></span>
               <input 
-                type="password" 
+                type={showPassword ? 'text' : 'password'} 
                 required
+                minLength={6}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 rounded-xl bg-white/5 border border-white/5 focus:border-primary focus:outline-none transition-colors text-sm"
+                className="w-full pl-10 pr-10 py-3 rounded-xl bg-white/5 border border-white/5 focus:border-primary focus:outline-none transition-colors text-sm"
                 placeholder="•••••••• (Min 6 chars)"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-500 hover:text-slate-300 focus:outline-none cursor-pointer"
+                title={showPassword ? 'Hide password' : 'Show password'}
+              >
+                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
             </div>
           </div>
 

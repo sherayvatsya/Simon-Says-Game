@@ -5,6 +5,7 @@ import { z } from 'zod';
 import crypto from 'crypto';
 import mongoose from 'mongoose';
 import { User } from '../models/User';
+import { Leaderboard } from '../models/Leaderboard';
 import * as mockDb from '../config/mockDb';
 import { sendEmail } from '../utils/mailer';
 import { protect, AuthRequest } from '../middleware/auth';
@@ -47,7 +48,8 @@ router.post('/register', async (req, res): Promise<any> => {
   try {
     const validation = registerSchema.safeParse(req.body);
     if (!validation.success) {
-      return res.status(400).json({ success: false, errors: validation.error.errors });
+      const message = validation.error.errors.map(err => `${err.path.join('.')}: ${err.message}`).join(', ');
+      return res.status(400).json({ success: false, message, errors: validation.error.errors });
     }
 
     const { name, email, password, securityQuestion, securityAnswer } = validation.data;
@@ -64,7 +66,7 @@ router.post('/register', async (req, res): Promise<any> => {
       const hashedAnswer = await bcrypt.hash(securityAnswer.trim().toLowerCase(), salt);
       const verificationToken = crypto.randomBytes(20).toString('hex');
 
-      await User.create({
+      const newUser = await User.create({
         name,
         email,
         password: hashedPassword,
@@ -72,6 +74,14 @@ router.post('/register', async (req, res): Promise<any> => {
         isVerified: true, // auto-verify
         securityQuestion,
         securityAnswer: hashedAnswer,
+      });
+
+      await Leaderboard.create({
+        userId: newUser._id,
+        username: newUser.name,
+        highestScore: 0,
+        dailyScore: 0,
+        weeklyScore: 0,
       });
 
       // Send verification email
@@ -111,6 +121,15 @@ router.post('/register', async (req, res): Promise<any> => {
         securityQuestion,
         securityAnswer: hashedAnswer,
         createdAt: new Date(),
+      });
+
+      mockDb.mockLeaderboards.push({
+        userId: mockId,
+        username: name,
+        avatar: '',
+        highestScore: 0,
+        dailyScore: 0,
+        weeklyScore: 0,
       });
 
       mockDb.persistMockDb(); // Persist mock db

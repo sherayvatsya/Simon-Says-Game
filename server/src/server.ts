@@ -24,8 +24,6 @@ import adminRoutes from './routes/admin';
 const app = express();
 const server = http.createServer(app);
 
-// Connect to Database
-connectDB();
 
 // Create uploads folder if it doesn't exist
 const uploadsDir = path.join(__dirname, '../uploads');
@@ -93,6 +91,8 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 });
 
 const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log(`SimonX Server running on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode.`);
+connectDB().then(() => {
+  server.listen(PORT, () => {
+    console.log(`SimonX Server running on port ${PORT} in ${process.env.NODE_ENV || 'development'} mode.`);
+  });
 });
